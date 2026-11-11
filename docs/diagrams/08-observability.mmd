@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph SRC["Telemetry sources"]
+    A["Applications"]
+    B["Platform and network"]
+    C["Identity and access"]
+    D["AI gateway and agents"]
+  end
+  A --> COL["Collector<br/>OpenTelemetry-compatible"]
+  B --> COL
+  C --> COL
+  D --> COL
+  COL --> RED["Redaction and sampling<br/>remove personal data where possible"]
+  RED --> HOT["Hot store<br/>search and alerting"]
+  RED --> COLD["Cold archive<br/>immutable, regional"]
+  HOT --> DASH["Dashboards and alerts"]
+  HOT --> SEC["Security detection"]
+  COLD --> EVID["Audit and legal evidence"]
+  RET["Retention policy by log class"] -.-> HOT
+  RET -.-> COLD
+  COLD -.->|"portable export"| EXIT["Exit copy"]

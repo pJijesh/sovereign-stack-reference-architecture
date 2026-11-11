@@ -1,0 +1,17 @@
+flowchart LR
+  EXT["Partners and customers"] -->|"HTTPS, OAuth 2.0"| GW
+  INTU["Internal consumers"] --> GW
+  subgraph EDGE["API edge"]
+    GW["API gateway<br/>authn, rate limits, schema checks"]
+    PORTAL["API catalogue<br/>OpenAPI and AsyncAPI specs"]
+  end
+  GW --> SVC["Domain services"]
+  SVC -->|"publish"| BUS["Event backbone<br/>topics, retention, replay"]
+  BUS -->|"subscribe"| SVC2["Consumers and projections"]
+  BUS --> CON["Connectors<br/>SaaS, files, legacy systems"]
+  CON <--> LEG["Third-party and legacy systems"]
+  SR["Schema registry<br/>versioned contracts"] -.-> BUS
+  SR -.-> GW
+  PORTAL -.-> GW
+  GW -.->|"access logs"| LOG["Log pipeline"]
+  BUS -.->|"consumer lag and errors"| LOG

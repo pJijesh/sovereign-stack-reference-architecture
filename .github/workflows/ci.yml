@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"   # weekly, so external links are re-checked
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Tests and internal checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Check internal links
+        run: python tools/check_links.py
+      - name: Check diagram sources, embeds and PNGs agree
+        run: python tools/check_diagrams.py
+      - name: Smoke test the assessment tool
+        run: python tools/assess.py assessment/example-filled.csv --target 3
+
+  diagrams:
+    name: Render Mermaid diagrams
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli@11.16.0
+      - name: Render every diagram into a temporary folder (syntax check)
+        run: tools/render_diagrams.sh --check
+
+  external-links:
+    name: External link check (advisory)
+    runs-on: ubuntu-latest
+    continue-on-error: true   # third-party sites can be slow or block bots
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check web links
+        run: python tools/check_links.py --external

@@ -1,0 +1,17 @@
+flowchart TB
+  HR["Authoritative HR source"] -->|"joiner, mover, leaver events"| IDP
+  WL["Workload identities<br/>short-lived tokens"] --> IDP
+  subgraph IDPZ["Identity plane"]
+    direction LR
+    MFA["Phishing-resistant MFA"]
+    IDP["Primary identity provider<br/>OIDC and SAML"]
+    PAM["Privileged access management<br/>time-bound elevation"]
+    BG["Break-glass accounts<br/>offline, monitored"]
+    MFA --- IDP
+    IDP --- PAM
+    PAM --- BG
+  end
+  IDP -->|"federation and SCIM provisioning"| APPS["SaaS and internal applications"]
+  IDP -->|"claims"| GW["API gateway and policy engine"]
+  IDP -.->|"sign-in and audit events"| LOG["Log pipeline"]
+  IDP -.->|"scheduled export of users, groups, roles"| EXIT["Exit copy in open formats"]

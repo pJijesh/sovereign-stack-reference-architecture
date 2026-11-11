@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Node (Mermaid CLI installs)
+node_modules/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local assessment work. Keep your own scores out of the public repository.
+assessment/*.local.csv
+assessment/my-*.csv

@@ -1,0 +1,15 @@
+flowchart TB
+  APPS["Applications and agents"] --> AIGW["AI gateway<br/>routing, quotas, redaction, logging"]
+  AIGW -->|"policy: public or low-risk data"| MAN["Managed model API<br/>regional endpoint"]
+  AIGW -->|"policy: sensitive data"| SELF["Self-hosted model serving<br/>open-weight models"]
+  AIGW --> RET["Retrieval service"]
+  RET --> VEC["Vector store<br/>with access filters"]
+  RET --> DOCS["Governed document sources"]
+  subgraph LIFE["Model lifecycle"]
+    REG["Model and prompt registry<br/>versions, licences, owners"]
+    EVAL["Evaluation harness<br/>quality, safety, bias, regression"]
+  end
+  REG -.->|"approved models"| AIGW
+  EVAL -.->|"release gate"| REG
+  GATE["AI governance gate"] -.->|"approves use case"| AIGW
+  AIGW -.->|"prompts, outputs, decisions"| AUD["Audit log"]

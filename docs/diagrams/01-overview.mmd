@@ -1,0 +1,30 @@
+flowchart TB
+  subgraph USE["Consumers"]
+    direction LR
+    U["Staff and partners"]
+    APP["Business applications"]
+  end
+  subgraph STACK["Capability layers"]
+    direction TB
+    IAM["Identity and access<br/>IdP, SSO, MFA, workload identity"]
+    INT["Integration and APIs<br/>gateway, event backbone, connectors"]
+    ORCH["Orchestration and agents<br/>workflows, tool permissions"]
+    AI["AI and ML platform<br/>model serving, vector store, evaluation"]
+    DATA["Data and storage<br/>open formats, regional placement"]
+    IAM --> INT
+    INT --> ORCH
+    INT --> AI
+    ORCH --> AI
+    ORCH --> DATA
+    AI --> DATA
+    INT --> DATA
+  end
+  subgraph XC["Cross-cutting layers"]
+    direction LR
+    SEC["Security and key management<br/>KMS, secrets, network controls"]
+    OBS["Observability<br/>logs, metrics, traces, audit trail"]
+    GOV["Governance and compliance<br/>policy, AI gate, DPIA, evidence"]
+    OBS -.->|"evidence"| GOV
+  end
+  USE --> IAM
+  XC -.->|"apply to every layer"| STACK

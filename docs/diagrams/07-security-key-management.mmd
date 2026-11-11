@@ -1,0 +1,22 @@
+flowchart TB
+  subgraph KEYS["Key custody"]
+    ROOT["Root of trust<br/>HSM-backed, dual control"]
+    KMS["Key management service<br/>customer-managed keys"]
+    EXTK["Optional external key manager<br/>for the most sensitive data"]
+  end
+  ROOT --> KMS
+  EXTK -.-> KMS
+  KMS -->|"envelope encryption"| DATA["Data stores and backups"]
+  KMS -->|"signing keys"| IDP["Identity provider and tokens"]
+  VAULT["Secrets manager<br/>dynamic, short-lived credentials"] --> WL["Workloads and pipelines"]
+  KMS --> VAULT
+  subgraph NET["Network and platform controls"]
+    SEG["Segmentation and private endpoints"]
+    EGR["Egress allow-list"]
+    POST["Posture management and patching"]
+  end
+  SEG --- EGR
+  EGR --- POST
+  KMS -.->|"key use and rotation events"| LOG["Log pipeline"]
+  VAULT -.->|"secret access events"| LOG
+  KMS -.->|"revocation test"| EXIT["Crypto-shredding as exit control"]

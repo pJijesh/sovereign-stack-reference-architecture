@@ -1,0 +1,16 @@
+flowchart TB
+  SRC["Operational systems and SaaS exports"] --> ING["Ingestion<br/>batch and change data capture"]
+  ING --> RAW["Raw zone<br/>immutable, regional"]
+  RAW --> CUR["Curated zone<br/>open table formats"]
+  CUR --> SEM["Semantic and serving layer"]
+  SEM --> BI["Analytics and reporting"]
+  SEM --> API["Data APIs"]
+  CAT["Catalogue and lineage<br/>classification, owner, residency tag"] -.-> RAW
+  CAT -.-> CUR
+  CAT -.-> SEM
+  KMS["Customer-managed keys"] -.->|"encrypts"| RAW
+  KMS -.->|"encrypts"| CUR
+  RET["Retention and deletion jobs"] -.-> RAW
+  RET -.-> CUR
+  BK["Backups in a second location<br/>restore tested"] -.-> CUR
+  CUR -.->|"portable copy"| EXIT["Exit export"]

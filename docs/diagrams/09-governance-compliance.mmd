@@ -1,0 +1,20 @@
+flowchart TB
+  POL["Policy set<br/>data, AI, security, supplier"] --> CTRL["Control library<br/>mapped to obligations"]
+  REG["Obligation register<br/>UK GDPR, EU GDPR, EU AI Act, sector rules"] --> CTRL
+  CTRL --> RISK["Risk register and treatment"]
+  subgraph PROC["Decision gates"]
+    DPIA["DPIA and transfer assessment"]
+    AIG["AI governance gate"]
+    SUP["Supplier and exit review"]
+  end
+  CTRL --> DPIA
+  CTRL --> AIG
+  CTRL --> SUP
+  DPIA --> DEC["Documented decision<br/>ADR, owner, review date"]
+  AIG --> DEC
+  SUP --> DEC
+  DEC --> OPS["Operations"]
+  OPS -.->|"logs and test results"| EV["Evidence store"]
+  EV --> REV["Management review and internal audit"]
+  REV -.-> POL
+  REV -.-> RISK

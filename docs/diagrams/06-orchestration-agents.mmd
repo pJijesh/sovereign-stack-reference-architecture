@@ -1,0 +1,15 @@
+flowchart LR
+  TRIG["Trigger<br/>event, schedule, user request"] --> ORCH["Workflow orchestrator<br/>durable state, retries, timeouts"]
+  ORCH --> PLAN["Agent runtime<br/>bounded plan and step budget"]
+  PLAN -->|"model calls"| AIGW["AI gateway"]
+  PLAN -->|"tool request"| TG["Tool gateway<br/>allow-list, scopes, schema validation"]
+  TG --> RO["Read-only tools"]
+  TG --> WR["Write tools"]
+  WR -->|"above threshold"| HUM["Human approval step"]
+  HUM --> WR2["Action executed"]
+  RO --> SYS["Business systems via API"]
+  WR2 --> SYS
+  ID["Agent identity<br/>least privilege, short-lived"] -.-> TG
+  KILL["Kill switch and rate limits"] -.-> PLAN
+  TG -.->|"every call"| AUD["Audit log"]
+  PLAN -.->|"trace"| AUD
