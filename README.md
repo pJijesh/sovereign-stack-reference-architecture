@@ -106,11 +106,11 @@ This repository uses two licences, because code and documentation have different
 - **Code is licensed under the [MIT licence](LICENSE).** This covers the Python scripts and tests in `tools/` and `tests/`, the shell script, configuration files and the CI workflow.
 - **Documentation is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DOCS.txt).** This covers the Markdown documents, diagrams and the assessment CSV templates. You may share and adapt them, including commercially, provided you give appropriate credit, link to the licence and indicate if changes were made.
 
-Suggested attribution: "Based on the Sovereign Stack Reference Architecture by Jijesh Puliyappottammal, https://github.com/pJijesh/sovereign-stack-reference-architecture, CC BY 4.0."
+Suggested attribution: "Based on the Sovereign Stack Reference Architecture by Puliyappottammal Jijesh, https://github.com/pJijesh/sovereign-stack-reference-architecture, CC BY 4.0."
 
 ## About the author
 
-Jijesh Puliyappottammal is an IT manager and author. Find him on [GitHub (pJijesh)](https://github.com/pJijesh) and [LinkedIn](https://www.linkedin.com/in/pjijesh). His book, *The Sovereign Stack*, is related work; this repository is a standalone resource.
+Puliyappottammal Jijesh is an IT manager and author. Find him on [GitHub (pJijesh)](https://github.com/pJijesh) and [LinkedIn](https://www.linkedin.com/in/pjijesh). His forthcoming book, *The Sovereign Stack*, is related work; this repository is a standalone resource.
 
 The views here are the author's own and do not represent any employer or client. No employer or client data, systems or examples are used.
 

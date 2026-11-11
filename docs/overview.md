@@ -79,6 +79,6 @@ Terms are defined in the [glossary](glossary.md). Sources are listed in [referen
 
 ## About the author and related work
 
-This repository is maintained by Jijesh Puliyappottammal ([GitHub: pJijesh](https://github.com/pJijesh), [LinkedIn](https://www.linkedin.com/in/pjijesh)), an IT manager and author. His book, *The Sovereign Stack*, is related work. This repository is a standalone resource.
+This repository is maintained by Puliyappottammal Jijesh ([GitHub: pJijesh](https://github.com/pJijesh), [LinkedIn](https://www.linkedin.com/in/pjijesh)), an IT manager and author. His forthcoming book, *The Sovereign Stack*, is related work. This repository is a standalone resource.
 
 The views here are the author's own and do not represent any employer or client. No employer or client data is used.
