@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Sovereign Stack Reference Architecture"
+abstract: "Vendor-neutral reference architecture for keeping control of identity, data, AI and integration: layers, decision records, maturity model."
+type: software
+authors:
+  - family-names: "Puliyappottammal"
+    given-names: "Jijesh"
+repository-code: "https://github.com/pJijesh/sovereign-stack-reference-architecture"
+url: "https://github.com/pJijesh/sovereign-stack-reference-architecture"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-11"
+keywords:
+  - ai-governance
+  - architecture-decision-records
+  - data-sovereignty
+  - enterprise-architecture
+  - reference-architecture
+  - uk-gdpr

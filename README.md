@@ -1,5 +1,7 @@
 # Sovereign Stack Reference Architecture
 
+![Sovereign Stack Reference Architecture: project banner](docs/images/banner.png)
+
 [![CI](https://github.com/pJijesh/sovereign-stack-reference-architecture/actions/workflows/ci.yml/badge.svg)](https://github.com/pJijesh/sovereign-stack-reference-architecture/actions/workflows/ci.yml) [![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE) ![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg) [![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSE-DOCS.txt)
 
 **Problem:** organisations depend on external platforms for identity, data, integration and AI, often without knowing where their data sits, who can reach it, or how they would leave.
