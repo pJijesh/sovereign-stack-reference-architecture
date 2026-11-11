@@ -19,14 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----------------------------------------------------------------------------
-Scope of this licence
-
-This MIT licence covers the code in this repository: the Python scripts and
-tests in tools/ and tests/, shell scripts, configuration files, and the CI
-workflow in .github/.
-
-The documentation (Markdown files, diagrams, and the assessment CSV templates)
-is licensed separately under Creative Commons Attribution 4.0 International
-(CC BY 4.0). See LICENSE-DOCS.txt and the "Licensing" section of README.md.
