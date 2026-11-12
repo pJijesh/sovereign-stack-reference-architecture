@@ -41,7 +41,7 @@ A UK organisation can be subject to the **EU GDPR** directly, for example where 
 
 ### 4.4 Other destinations and tools
 
-- Where no adequacy decision or regulation applies, the usual UK tools are the ICO's International Data Transfer Agreement (IDTA) or the UK Addendum to the EU standard contractual clauses, plus a transfer risk assessment. Source: [ICO IDTA guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/international-data-transfer-agreement-and-guidance/). From the EU side, see the Commission's [standard contractual clauses page](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en).
+- Where no adequacy decision or regulation applies, the usual UK tools are the ICO's International Data Transfer Agreement (IDTA) or the UK Addendum to the EU standard contractual clauses, plus a transfer risk assessment. Source: [ICO IDTA guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/appropriate-safeguards/what-are-standard-data-protection-clauses-the-uk-idta-and-the-addendum). From the EU side, see the Commission's [standard contractual clauses page](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en).
 - The new UK data protection test (section 2) changes how the assessment is framed. Check the ICO's updated guidance for current expectations.
 
 ### 4.5 Residency is not the same as jurisdiction exposure

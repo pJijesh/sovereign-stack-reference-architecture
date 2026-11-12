@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Score a self-assessment CSV and print a text summary with a radar-style chart.
 
-Standard library only. Python 3.9 or later.
+Standard library only. Python 3.10 or later.
 
 Usage:
     python tools/assess.py assessment/self-assessment-template.csv

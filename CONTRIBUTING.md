@@ -25,7 +25,7 @@ Thank you for considering a contribution. This is a documentation-first referenc
 
 ## Working locally
 
-You need Python 3.9 or later. Nothing else is required for the tools and tests.
+You need Python 3.10 or later. Nothing else is required for the tools and tests.
 
 ```bash
 python -m unittest discover -s tests -v      # run the tests
